@@ -1,27 +1,19 @@
-# (B) Write the script in R to sort the values contained in the following vector in ascending order 
-# and descending order: (23, 45, 10, 34, 89, 20, 67, 99). Demonstrate the output using graph.
+vec <- c(50,70,10,35,40,60,20,5)
 
-numbers <- c(23, 45, 10, 34, 89, 20, 67, 99)
+asc <- sort(vec)
+desc <- sort(vec, decreasing = TRUE)
 
-asc <- sort(numbers)
-des <- sort(numbers, decreasing = TRUE)
-
+print(vec)
 print(asc)
-print(des)
+print(desc)
 
-#Plot a bar chart
-barplot(
-  asc,
-  main = "Numbers in Ascending Order",
-  xlab = "Position",
-  ylab = "Value",
-  col = "skyblue"
-)
+png("asc.png", width = 800, height = 600)
 
 barplot(
-  des,
-  main = "Descending Order",
-  xlab = "Position",
-  ylab = "Values",
-  col = "skyblue"
+    asc,
+    main = "Ascending Order",
+    xlab = "Index",
+    ylab = "Value",
+    col = "skyblue"
 )
+dev.off()

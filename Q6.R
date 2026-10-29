@@ -1,35 +1,24 @@
-name <- c("Vivek", "Karan", "James", "Soham", "Renu",
-           "Farah", "Hetal", "Mary", "Ganesh", "Krish")
-salary <- c(21000, 55000, 67000, 50000, 54000,
-            40000, 30000, 70000, 20000, 15000)
-
-Emp_details <- data.frame(
-  Name = name,
-  Salary = salary
+EmpDet <- data.frame(
+    Name = c("Siddhesh", "Gourika", "Sagar"),
+    Salary = c(200000, 190000, 185000)
 )
 
-#New entries
-name <- c("Amit", "Neha", "Rahul", "Priya", "Ankit")
-salary = c(35000, 48000, 62000, 42000, 39000)
-
-emp_details_new <- data.frame(
-  Name = name,
-  Salary = salary
+EmpDet2 <- data.frame(
+    Name = c("Jatin", "Pratham"),
+    Salary = c(100000, 150000)
 )
 
-#Joining both dataframes
-Final <- rbind(Emp_details, emp_details_new)
-print(Final)
+EmpDet3 <- rbind(EmpDet, EmpDet2)
 
+print(EmpDet3)
 
-#Plotting
+png("q6.png", width = 800, height = 600)
 barplot(
-  Final$Salary,
-  names.arg = Final$Name,
-  xlab = "Employee Names",
-  ylab = "Employee Salary",
-  main = "Employee Salaries",
-  col = "blue",
-  las = 2, # Changes the orientation of names to vertical
-  cex.names = 0.7 #Reduces text size of X axis names
+    EmpDet3$Salary,
+    main = "Salary Details",
+    names.arg = EmpDet3$Name,
+    xlab = "Name",
+    ylab = "Salary",
+    col = "blue"
 )
+dev.off()

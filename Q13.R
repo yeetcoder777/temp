@@ -5,12 +5,15 @@ df <- data.frame(
   marks = c(56, 75, 48, 69, 84, 53)
 )
 
-# Create a subset of course less than 3 by using [ ] brackets 
-subset1 <- df[df$course < 3, ]
-print(subset1)
+result <- df[df$course < 3, ]
 
-#create a subset where the course column is less than 3 or the class equals to 2 
-#by using subset () function
+result2 <- subset(df, course < 3 | class == 2)
 
-subset2 <- subset(df, course < 3 | class == 2)
-print(subset2)
+png("q13.png", width=800, height=600)
+barplot(
+    df$marks,
+    main="q13",
+    xlab = "Course",
+    ylab= "Marks"
+)
+dev.off()
